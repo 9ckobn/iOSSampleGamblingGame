@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acee98b526c8aa41abdc5f222c04617, type: 3}
+  m_Name: New Shop Config
+  m_EditorClassIdentifier: 
+  slots:
+  - name: Mirror Ring
+    description: Now the character is doubled
+  - name: Boots of speed
+    description: Increase your speed x1.5
+  - name: Boot
+    description: Increase your speed x1.1
+  - name: Camber cloak
+    description: You can fly
+  - name: Shadowwalk Cloak
+    description: Grants stealth in the shadows.
+  - name: Verdant Veil
+    description: Blends wearer with nature's hues.
+  - name: Bonus Heart
+    description: Extra life upon activation.
+  - name: Guardian Shield
+    description: Shields against all incoming attacks.
+  - name: Majestic Crown
+    description: Bestows regal powers and authority.
+  - name: Ring of Verity
+    description: Reveals hidden truths and deceptions.
+  - name: Lunar Band
+    description: Enhances power under moonlight.
+  - name: Solar Band
+    description: Amplifies abilities in daylight.
