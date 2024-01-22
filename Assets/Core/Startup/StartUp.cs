@@ -1,3 +1,4 @@
+using OneSignalSDK;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,11 @@ public class StartUp : MonoBehaviour
 
     void Start()
     {
+        OneSignal.ConsentRequired = true;
+        OneSignal.Initialize("885e41e4-21c9-4573-96fc-d98004376cbc");
+        OneSignal.User.PushSubscription.OptIn();
+
+
         StartLoadScene();
     }
 

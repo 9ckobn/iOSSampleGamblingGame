@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.onesignal.unity.android": "5.0.5",
+    "com.onesignal.unity.core": "5.0.5",
+    "com.onesignal.unity.ios": "5.0.5",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "2.1.0",
     "com.unity.feature.development": "1.0.1",
@@ -11,6 +14,7 @@
     "com.unity.timeline": "1.6.5",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.1",
+    "net.gree.unity-webview": "https://github.com/gree/unity-webview.git?path=/dist/package",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -42,5 +46,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "npmjs",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "com.onesignal"
+      ]
+    }
+  ]
 }

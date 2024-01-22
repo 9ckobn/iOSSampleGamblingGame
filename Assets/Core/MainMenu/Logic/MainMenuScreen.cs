@@ -9,11 +9,16 @@ public class MainMenuScreen : UIScreen
     [SerializeField] private ClickableElement dailyBonusButton;
 
     [Space(10)]
+    [SerializeField] private ClickableElement settingsButton;
     [SerializeField] private SettingsScreen settingsScreen;
 
     [Space(10)]
     [SerializeField] private ShopScreen shopScreen;
     [SerializeField] private ClickableElement shopButton;
+
+    [Space(10)]
+    [SerializeField] private LvlSelectScreen levScreen;
+    [SerializeField] private ClickableElement playButton;
 
     [Space(10)]
     [SerializeField] private TaskScreen taskScreen;
@@ -41,6 +46,8 @@ public class MainMenuScreen : UIScreen
         }
 
         taskButton.OnClick = () => taskButton.OpenScreenAsync(this, taskScreen);
-        shopButton.OnClick = () => taskButton.OpenScreenAsync(this, shopScreen);
+        shopButton.OnClick = () => shopButton.OpenScreenAsync(this, shopScreen);
+        playButton.OnClick = () => playButton.OpenScreenAsync(this, levScreen);
+        settingsButton.OnClick = () => settingsButton.OpenScreenAsync(this, settingsScreen);
     }
 }

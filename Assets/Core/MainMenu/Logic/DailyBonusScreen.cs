@@ -1,5 +1,6 @@
+using System;
 using System.Collections;
-
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class DailyBonusScreen : UIScreen
     [SerializeField] private TextMeshProUGUI headerText;
 
     private const string h1_1 = "Daily Bonus";
+    private const string h1_1_1 = "Daily Bonus";
     private const string h1_2 = "Rolling dice";
     private const string h1_3 = "You won!";
 
@@ -25,9 +27,20 @@ public class DailyBonusScreen : UIScreen
 
     private int currentWin = 10; //maybe to wins array like [10, 100, 500...]
 
+    public bool isWin = false;
+
+    public Action onClose;
+
     public override void StartScreen()
     {
-        headerText.text = h1_1;
+        if (isWin)
+        {
+            headerText.text = h1_1_1;
+        }
+        else
+        {
+            headerText.text = h1_1;
+        }
 
         rollButton.OnClick += StartRoll;
 
@@ -58,11 +71,13 @@ public class DailyBonusScreen : UIScreen
 
     private void GenerateWin()
     {
+        currentWin = 10;
+
         timer.SetActive(false);
 
         headerText.text = h1_3;
 
-        var randomX = Random.Range(1, 6);
+        var randomX = UnityEngine.Random.Range(1, 6);
 
         dice.sprite = diceAtlas[randomX - 1];
 
@@ -74,15 +89,16 @@ public class DailyBonusScreen : UIScreen
 
         currentWin = totalWin;
 
-        continueButton.OnClick += GetWin;
+        continueButton.OnClick = async () => await GetWin();
 
         win.SetActive(true);
     }
 
-    private async void GetWin()
+    private async UniTask GetWin()
     {
         PlayerStats.MoneyCount += currentWin;
         await CloseScreenWithAnimation();
+        onClose?.Invoke();
 
         MenuHandler.instance.LoadMainMenu();
     }

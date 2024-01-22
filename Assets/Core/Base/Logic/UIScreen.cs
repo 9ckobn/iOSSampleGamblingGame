@@ -52,7 +52,7 @@ public abstract class UIScreen : MonoBehaviour
 
         await UniTask.Delay((int)(fadeDuration * 1000));
 
-        gameObject.SetActive(false);
+        if (gameObject) gameObject.SetActive(false);
     }
 
     public async UniTask CloseScreenWithAnimation(int timeOutToStart)
